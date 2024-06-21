@@ -12,12 +12,20 @@ const div2 = document.createElement('div');
 div2.style.width = '700px';
 div2.style.height = '500px';
 div2.style.display = 'flex';
-div2.style.justifyContent = 'start';
+div2.style.justifyContent = 'center';
 div2.style.alignContent = 'center';
 div2.style.flexDirection = 'column';
 div2.style.background = 'gold';
 body.appendChild(div2);
 
+
+//Texto emcima do retangulo Amarelo.
+const textoDiv = document.createElement('h3');
+textoDiv.textContent = 'Calculando a sua Média:';
+textoDiv.style.display = 'flex';
+textoDiv.style.justifyContent = 'center';
+textoDiv.style.color = 'Blue';
+div2.appendChild(textoDiv);
 
 // Caixar de dentro do retangulo Amarelo.
 const div = document.createElement('div');
@@ -63,10 +71,7 @@ div2.appendChild(div5);
 
 
 
-const textoDiv = document.createElement('h3');
-textoDiv.textContent = 'Calculando a sua Média:';
-textoDiv.style.color = 'Blue';
-div2.appendChild(textoDiv);
+
 
 
 
@@ -105,6 +110,7 @@ nota_3.style.height = '50px';
 div5.appendChild(nota_3)
 
 
+//Tirando a media das notas_1,2 e 3.
 const bt = document.createElement('Button')
 bt.textContent = 'Calcular Média';
 bt.style.display = 'flex-end';
@@ -112,9 +118,10 @@ div2.appendChild(bt);
 bt.addEventListener('click', function () {
     var media = (parseFloat(nota_1.value) + parseFloat(nota_2.value) + parseFloat(nota_3.value)) / 3
 
-    alert(media)
     const h1 = document.createElement('h1');
     h1.textContent = `${nome.value} Sua média é ${media}`;
     h1.style.color = 'black';
+    h1.style.display = 'flex';
+    h1.style.justifyContent = 'center';
     div2.appendChild(h1)
 })
